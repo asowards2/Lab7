@@ -1,7 +1,10 @@
 package edu.cscc;
 import java.util.Random;
 
-// TODO remove this comment and  document this class. Be sure to include an @author tag
+/**
+ * The game of Rock, Paper, Scissors, Lizard, Spock. It is a modified version of Rock, Paper, Scissors, that reduces the chance of a tie.
+ * @author Aaron Sowrads
+ */
 public class RPSLSpock {
 
     static Random rand = new Random(System.currentTimeMillis());
@@ -12,7 +15,11 @@ public class RPSLSpock {
     public static final String LIZARD = "lizard";
     public static final String SPOCK = "spock";
 
-    // TODO remove this comment and document this method
+    /**
+     * Check if the provided pick is valid.
+     * @param pick the chosen action by the user.
+     * @return If the pick is valid return true.
+     */
     public static boolean isValidPick(String pick) {
         if (pick == null) {
             return false;
@@ -25,7 +32,10 @@ public class RPSLSpock {
                 SPOCK.equalsIgnoreCase(pick));
     }
 
-    // TODO remove this comment and document this method
+    /**
+     * Randomly choose Rock, Paper, Scissors, Lizard, or Spock.
+     * @return return a randomly selected pick.
+     */
     public static String generatePick() {
         String pick = null;
         switch (rand.nextInt(5)) {
@@ -48,7 +58,12 @@ public class RPSLSpock {
         return pick;
     }
 
-    // TODO remove this comment and document this method
+    /**
+     * Determine if the computer or the user has won the game.
+     * @param c_pick the computer's pick.
+     * @param h_pick the human's pick.
+     * @return If the computer wins return true, and if the human wins return false.
+     */
     public static boolean isComputerWin(String c_pick,String h_pick) {
         h_pick = h_pick.toLowerCase();
         return ((ROCK.equals(c_pick) && (SCISSORS.equals(h_pick) || LIZARD.equals(h_pick))) ||
